@@ -27,7 +27,7 @@ function deploy(params) {
         name: "address",
         extract: {
           type: "regex",
-          expr: "My contract deployed with address (?<address>0x[a-zA-Z0-9]{40})",
+          expr: "Contract\s+deployed\s+at\s+address\s+(?<address>[A-Za-z0-9_-]+)",
           groupName: "address",
         },
       },
