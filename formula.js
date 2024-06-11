@@ -22,6 +22,7 @@ function deploy(params) {
       TOKEN_SYMBOL: params.symbol,
       TOKEN_SUPPLY: params.totalSupply.toString(),
     },
+    interactive: true,
     outputs: [
       {
         name: "address",
