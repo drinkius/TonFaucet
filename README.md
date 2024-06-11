@@ -1,13 +1,16 @@
-# Sample Hardhat Project
+# Ton faucet dApp: contract + UI
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This is a showcase project that combines a facuet contract and corresponding UI that can be launched on Ton blockchain through [Drew Package Manager](https://www.npmjs.com/package/@drewpackages/cli). The setup creates a new Jetton token with the name of your choosing and creates a faucet UI that helps anyone mint the token they might need for testing purposes
 
-Try running some of the following tasks:
+To launch a new dApp instance (including new contracts deployment) it:
+```shell
+npm i -g @drewpackages/cli
+drew deploy-ton drinkius/tonfaucet  --params "{\"name\": \"Test Token\", \"symbol\": \"TT\", \"totalSupply\": 100000000000000 }"
+```
+
+## Contributing
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+npm i
+npx blueprint run
 ```

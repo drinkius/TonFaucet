@@ -15,7 +15,7 @@ const paramsSchema = {
 };
 
 function deploy(params) {
-  const [address] = api.hardhat.script({
+  const [address] = api.blueprint.script({
     path: "./scripts/deploy.ts",
     envs: {
       TOKEN_NAME: params.name,
@@ -27,7 +27,7 @@ function deploy(params) {
         name: "address",
         extract: {
           type: "regex",
-          expr: "My token deployed with address (?<address>0x[a-zA-Z0-9]{40})",
+          expr: "My contract deployed with address (?<address>0x[a-zA-Z0-9]{40})",
           groupName: "address",
         },
       },
@@ -37,7 +37,7 @@ function deploy(params) {
   api.offchain.deploy({
     details: {
       envs: {
-        TOKEN_ADDRESS: address,
+        CONTRACT_ADDRESS: address,
         RPC_URL: params.config.common.rpcUrl(),
       },
       flags: {
