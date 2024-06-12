@@ -22,13 +22,12 @@ function deploy(params) {
       TOKEN_SYMBOL: params.symbol,
       TOKEN_SUPPLY: params.totalSupply.toString(),
     },
-    interactive: true,
     outputs: [
       {
         name: "address",
         extract: {
           type: "regex",
-          expr: "Contract\s+deployed\s+at\s+address\s+(?<address>[A-Za-z0-9_-]+)",
+          expr: "Contract deployed at address (?<address>[A-Za-z0-9_-]+)",
           groupName: "address",
         },
       },
